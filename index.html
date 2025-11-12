@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Needy Couture | Where Thought Becomes Style</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-gold: #d4af37;
+            --secondary-gold: #b8941f;
+            --accent-gold: #f4e4a6;
+            --dark-grey: #2c2c2c;
+            --medium-grey: #4a4a4a;
+            --light-grey: #f5f5f5;
+            --text-dark: #333333;
+            --text-light: #777777;
+            --white: #ffffff;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--dark-grey);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary-gold);
+            text-decoration: none;
+            letter-spacing: 1.5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--white);
+            margin-left: 5px;
+        }
+
+        .logo i {
+            font-size: 28px;
+            margin-right: 12px;
+            color: var(--primary-gold);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+            position: relative;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 500;
+            font-size: 17px;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary-gold);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-gold);
+        }
+
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+
+        .header-icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .header-icons a {
+            color: var(--white);
+            font-size: 18px;
+            transition: all 0.3s;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-icons a:hover {
+            color: var(--primary-gold);
+            background-color: rgba(212, 175, 55, 0.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(44, 44, 44, 0.7), rgba(44, 44, 44, 0.7)), 
+                        url('https://images.unsplash.com/photo-1539109136881-3be0616acf4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding-top: 80px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            color: var(--white);
+            line-height: 1.2;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+            color: var(--light-grey);
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 45px;
+            background-color: var(--primary-gold);
+            color: var(--dark-grey);
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            border-radius: 2px;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .cta-button:hover {
+            background-color: var(--secondary-gold);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Storyline Section */
+        .storyline {
+            padding: 120px 5%;
+            background-color: var(--light-grey);
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+            color: var(--dark-grey);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-gold);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .storyline-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .storyline p {
+            font-size: 1.3rem;
+            line-height: 1.9;
+            color: var(--medium-grey);
+            margin-bottom: 35px;
+        }
+
+        .motto {
+            font-size: 1.6rem;
+            font-style: italic;
+            color: var(--primary-gold);
+            margin-top: 50px;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        /* Collections Section */
+        .collections {
+            padding: 120px 5%;
+            background-color: var(--white);
+        }
+
+        .collections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 35px;
+            margin-top: 60px;
+        }
+
+        .collection-item {
+            position: relative;
+            overflow: hidden;
+            height: 450px;
+            border-radius: 5px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s;
+            background: var(--white);
+        }
+
+        .collection-item:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .collection-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s;
+        }
+
+        .collection-item:hover .collection-img {
+            transform: scale(1.08);
+        }
+
+        .collection-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(44, 44, 44, 0.9));
+            padding: 30px 25px 25px;
+            color: var(--white);
+        }
+
+        .collection-title {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+
+        .collection-type {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .collection-price {
+            font-size: 1.3rem;
+            color: var(--primary-gold);
+            font-weight: 600;
+        }
+
+        /* Design Studio Section */
+        .design-studio {
+            padding: 120px 5%;
+            background-color: var(--light-grey);
+        }
+
+        .design-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .design-item {
+            background: var(--white);
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+            transition: all 0.3s;
+        }
+
+        .design-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .design-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 1px solid #eee;
+        }
+
+        .design-info {
+            padding: 20px;
+        }
+
+        .design-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--dark-grey);
+        }
+
+        .design-desc {
+            color: var(--medium-grey);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Fabrics Section */
+        .fabrics {
+            padding: 120px 5%;
+            background-color: var(--white);
+        }
+
+        .fabrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .fabric-item {
+            background: var(--white);
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+            transition: all 0.3s;
+            text-align: center;
+            padding-bottom: 20px;
+            border: 1px solid #eee;
+        }
+
+        .fabric-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary-gold);
+        }
+
+        .fabric-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .fabric-name {
+            font-size: 1.2rem;
+            margin: 15px 0 10px;
+            color: var(--dark-grey);
+        }
+
+        .fabric-price {
+            color: var(--primary-gold);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .fabric-button {
+            display: inline-block;
+            padding: 10px 25px;
+            background: transparent;
+            border: 1px solid var(--primary-gold);
+            color: var(--primary-gold);
+            text-decoration: none;
+            border-radius: 3px;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .fabric-button:hover {
+            background: var(--primary-gold);
+            color: var(--white);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 120px 5%;
+            background-color: var(--light-grey);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .service-item {
+            text-align: center;
+            padding: 40px 25px;
+            background-color: var(--white);
+            border-radius: 5px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s;
+            border-top: 4px solid transparent;
+        }
+
+        .service-item:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+            border-top: 4px solid var(--primary-gold);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary-gold);
+            margin-bottom: 25px;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--dark-grey);
+        }
+
+        .service-desc {
+            color: var(--medium-grey);
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-grey);
+            color: var(--white);
+            padding: 80px 5% 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-column h3 {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            color: var(--primary-gold);
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary-gold);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-column p, .footer-column a {
+            color: #cccccc;
+            line-height: 1.8;
+            margin-bottom: 12px;
+            display: block;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 1.05rem;
+        }
+
+        .footer-column a:hover {
+            color: var(--primary-gold);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
+            font-size: 1.1rem;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--primary-gold);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 70px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #999999;
+            font-size: 0.95rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+            
+            .section-title {
+                font-size: 2.4rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                padding: 15px 5%;
+            }
+
+            .logo {
+                margin-bottom: 15px;
+                font-size: 28px;
+            }
+
+            nav ul {
+                margin-bottom: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 8px 15px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .collections-grid, .design-grid, .fabrics-grid, .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        /* Custom nerdy glasses icon */
+        .nerdy-glasses {
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            height: 20px;
+            margin-right: 12px;
+        }
+
+        .nerdy-glasses:before, .nerdy-glasses:after {
+            content: '';
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            border: 2px solid var(--primary-gold);
+            border-radius: 50%;
+            top: 0;
+        }
+
+        .nerdy-glasses:before {
+            left: 0;
+        }
+
+        .nerdy-glasses:after {
+            right: 0;
+        }
+
+        .nerdy-glasses span {
+            position: absolute;
+            width: 6px;
+            height: 2px;
+            background: var(--primary-gold);
+            top: 9px;
+            left: 17px;
+        }
+
+        /* Header overlays/drawers/modals */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.6);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+        }
+
+        .overlay.active { display: flex; }
+
+        .search-box {
+            background: var(--white);
+            padding: 20px;
+            width: 90%;
+            max-width: 620px;
+            border-radius: 6px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 12px 14px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .drawer {
+            position: fixed;
+            top: 0;
+            right: -420px;
+            width: 380px;
+            height: 100%;
+            background: var(--white);
+            box-shadow: -6px 0 30px rgba(0,0,0,0.2);
+            z-index: 2001;
+            transition: right 0.35s ease;
+            padding: 20px;
+        }
+
+        .drawer.open { right: 0; }
+
+        .drawer h3 { margin-bottom: 12px; }
+
+        .modal { background: var(--white); padding: 20px; border-radius: 6px; max-width: 420px; width: 90%; }
+
+    /* Image manager */
+    .image-manager { max-width: 900px; width: 95%; max-height: 80vh; overflow:auto; display:flex;flex-direction:column; gap:12px; }
+    .image-row { display:flex; gap:12px; align-items:center; justify-content:space-between; padding:8px 0; border-bottom:1px solid #eee; }
+    .image-row img { width:120px; height:80px; object-fit:cover; border-radius:4px; }
+    .image-row input[type="text"] { width:320px; padding:6px; border:1px solid #ddd; border-radius:4px; }
+
+    /* Visually hidden (for focus-trap sentinel) */
+    .sr-only { position:absolute !important; height:1px; width:1px; overflow:hidden; clip:rect(1px, 1px, 1px, 1px); white-space:nowrap; }
+
+    /* Aria live region */
+    #aria-live { position:fixed; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <div class="nerdy-glasses">
+                    <span></span>
+                </div>
+                Needy <span>Couture</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#collections">Collections</a></li>
+                    <li><a href="#designs">Design Studio</a></li>
+                    <li><a href="#fabrics">Fabrics</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <a href="#" id="search-btn" aria-label="Open search"><i class="fas fa-search"></i></a>
+                <a href="#" id="cart-btn" aria-label="Open cart"><i class="fas fa-shopping-bag"></i></a>
+                <a href="#" id="user-btn" aria-label="Open account"><i class="fas fa-user"></i></a>
+                <a href="#" id="manage-images-btn" aria-label="Manage images"><i class="fas fa-image"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Where Thought Becomes Style</h1>
+            <p>At Needy Couture, we believe femininity is intelligence expressed in fabric. Our pieces are designed for the woman who reads, leads, and slays.</p>
+            <a href="#collections" class="cta-button">Discover Our Collections</a>
+        </div>
+    </section>
+
+    <!-- Storyline Section -->
+    <section class="storyline">
+        <h2 class="section-title">Our Philosophy</h2>
+        <div class="storyline-content">
+            <p>At Needy Couture, we believe femininity is intelligence expressed in fabric. Our pieces are designed for the woman who reads, leads, and slays. Because fashion should never ask you to choose between smart and stunning.</p>
+            <p class="motto">Where Thought Becomes Style</p>
+        </div>
+    </section>
+
+    <!-- Collections Section -->
+    <section class="collections" id="collections">
+        <h2 class="section-title">Our Collections</h2>
+        <div class="collections-grid">
+            <div class="collection-item">
+                <img data-img-key="collection-gilded-elegance" src="https://i.etsystatic.com/60938498/r/il/19ee72/7282377965/il_1588xN.7282377965_nya1.jpg" alt="Elegant Dress" class="collection-img">
+                <div class="collection-overlay">
+                    <div class="collection-type">Evening Wear</div>
+                    <h3 class="collection-title">Gilded Elegance</h3>
+                    <p class="collection-price" data-ngn="85000">₦85,000 <span class="usd-price">($199.99)</span></p>
+                    <button class="fabric-button add-to-cart" data-title="Gilded Elegance" data-ngn="85000">Add to cart</button>
+                </div>
+            </div>
+            <div class="collection-item">
+                <img data-img-key="collection-power-suit" src="https://i.etsystatic.com/55712593/r/il/4fef00/7193448176/il_1588xN.7193448176_41uh.jpg" alt="Business Attire" class="collection-img">
+                <div class="collection-overlay">
+                    <div class="collection-type">Corporate Wear</div>
+                    <h3 class="collection-title">Power Suit</h3>
+                    <p class="collection-price" data-ngn="120000">₦120,000 <span class="usd-price">($279.99)</span></p>
+                    <button class="fabric-button add-to-cart" data-title="Power Suit" data-ngn="120000">Add to cart</button>
+                </div>
+            </div>
+            <div class="collection-item">
+                <img data-img-key="collection-weekend-chic" src="https://i.etsystatic.com/55450467/c/1687/2250/853/0/il/bfac4b/6855580648/il_510x680.6855580648_7uc0.jpg" alt="Casual Wear" class="collection-img">
+                <div class="collection-overlay">
+                    <div class="collection-type">Casual Collection</div>
+                    <h3 class="collection-title">Weekend Chic</h3>
+                    <p class="collection-price" data-ngn="65000">₦65,000 <span class="usd-price">($149.99)</span></p>
+                    <button class="fabric-button add-to-cart" data-title="Weekend Chic" data-ngn="65000">Add to cart</button>
+                </div>
+            </div>
+            <div class="collection-item">
+                <img data-img-key="collection-ankara-elegance" src="https://i.etsystatic.com/60680069/c/540/720/0/44/il/7add44/7050560050/il_510x680.7050560050_pp76.jpg" alt="African Print" class="collection-img">
+                <div class="collection-overlay">
+                    <div class="collection-type">African Collection</div>
+                    <h3 class="collection-title">Ankara Elegance</h3>
+                    <p class="collection-price" data-ngn="75000">₦75,000 <span class="usd-price">($174.99)</span></p>
+                    <button class="fabric-button add-to-cart" data-title="Ankara Elegance" data-ngn="75000">Add to cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Studio Section -->
+    <section class="design-studio" id="designs">
+        <h2 class="section-title">Design Studio</h2>
+        <p style="text-align: center; max-width: 800px; margin: 20px auto 0; font-size: 1.2rem; color: var(--medium-grey);">Sneak peek into our creative process - from concept sketches to finished masterpieces</p>
+        <div class="design-grid">
+            <div class="design-item">
+                <img src="https://i.etsystatic.com/26628738/c/768/1024/282/0/il/5dea7b/6232648323/il_510x680.6232648323_kmx0.jpg" alt="Design Sketch 1" class="design-img">
+                <div class="design-info">
+                    <h3 class="design-title">Evening Gown Concept</h3>
+                    <p class="design-desc">Initial sketch for a bespoke evening gown with intricate beadwork.</p>
+                </div>
+            </div>
+            <div class="design-item">
+                <img src="https://i.etsystatic.com/52559711/r/il/758559/7212765582/il_510x680.7212765582_pv79.jpg" alt="Design Sketch 2" class="design-img">
+                <div class="design-info">
+                    <h3 class="design-title">Bridal Collection</h3>
+                    <p class="design-desc">Concept art for our upcoming bridal collection featuring modern silhouettes.</p>
+                </div>
+            </div>
+            <div class="design-item">
+                <img src="https://i.etsystatic.com/62762332/r/il/b25c49/7350136944/il_510x680.7350136944_gc7g.jpg" alt="Design Sketch 3" class="design-img">
+                <div class="design-info">
+                    <h3 class="design-title">Corporate Line</h3>
+                    <p class="design-desc">Preliminary designs for our power dressing collection.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fabrics Section -->
+    <section class="fabrics" id="fabrics">
+        <h2 class="section-title">Premium Fabrics</h2>
+        <p style="text-align: center; max-width: 800px; margin: 20px auto 0; font-size: 1.2rem; color: var(--medium-grey);">Select from our exclusive fabric collection for your custom creation</p>
+        <div class="fabrics-grid">
+            <div class="fabric-item">
+                <img data-img-key="fabric-italian-silk" src="https://i.etsystatic.com/31583964/r/il/d569cd/3348378625/il_510x680.3348378625_3say.jpg" alt="Silk Fabric" class="fabric-img">
+                <h3 class="fabric-name">Italian Silk</h3>
+                <p class="fabric-price" data-ngn="12000">₦12,000/yard <span class="usd-price">($28)</span></p>
+                <button class="fabric-button add-to-cart" data-title="Italian Silk" data-ngn="12000">Select</button>
+            </div>
+            <div class="fabric-item">
+                <img data-img-key="fabric-french-lace" src="https://i.etsystatic.com/6680332/r/il/75540e/7365423856/il_510x680.7365423856_2la8.jpg" alt="Lace Fabric" class="fabric-img">
+                <h3 class="fabric-name">French Lace</h3>
+                <p class="fabric-price" data-ngn="15000">₦15,000/yard <span class="usd-price">($35)</span></p>
+                <button class="fabric-button add-to-cart" data-title="French Lace" data-ngn="15000">Select</button>
+            </div>
+            <div class="fabric-item">
+                <img data-img-key="fabric-premium-ankara" src="https://i.etsystatic.com/10317816/c/1500/1500/294/0/il/4b078b/6302765690/il_510x680.6302765690_9ewh.jpg" alt="Ankara Fabric" class="fabric-img">
+                <h3 class="fabric-name">Premium Ankara</h3>
+                <p class="fabric-price" data-ngn="8000">₦8,000/yard <span class="usd-price">($18.50)</span></p>
+                <button class="fabric-button add-to-cart" data-title="Premium Ankara" data-ngn="8000">Select</button>
+            </div>
+            <div class="fabric-item">
+                <img data-img-key="fabric-crushed-velvet" src="https://i.etsystatic.com/22747942/r/il/9ed106/5686996935/il_510x680.5686996935_e8op.jpg" alt="Velvet Fabric" class="fabric-img">
+                <h3 class="fabric-name">Crushed Velvet</h3>
+                <p class="fabric-price" data-ngn="10000">₦10,000/yard <span class="usd-price">($23)</span></p>
+                <button class="fabric-button add-to-cart" data-title="Crushed Velvet" data-ngn="10000">Select</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <div class="service-icon">
+                    <i class="fas fa-pencil-alt"></i>
+                </div>
+                <h3 class="service-title">Designing</h3>
+                <p class="service-desc">Creating unique and innovative fashion designs that reflect your personality and style. From concept to sketch, we bring your vision to life.</p>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">
+                    <i class="fas fa-cut"></i>
+                </div>
+                <h3 class="service-title">Sewing & Tailoring</h3>
+                <p class="service-desc">Expert craftsmanship to bring our designs to life with precision and attention to detail. Custom fitting for the perfect silhouette.</p>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">
+                    <i class="fas fa-tshirt"></i>
+                </div>
+                <h3 class="service-title">Custom Fitting</h3>
+                <p class="service-desc">Tailored to perfection, ensuring each piece fits you flawlessly and enhances your natural shape. Multiple fittings for precision.</p>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                </div>
+                <h3 class="service-title">Direct Sales</h3>
+                <p class="service-desc">Purchase our exclusive collections directly from our studio or online boutique. Personal shopping consultations available.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Needy Couture</h3>
+                <p>Where Thought Becomes Style. Creating fashion that celebrates the intelligent, sophisticated woman.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#collections">Collections</a>
+                <a href="#designs">Design Studio</a>
+                <a href="#fabrics">Fabrics</a>
+                <a href="#services">Services</a>
+            </div>
+            <div class="footer-column">
+                <h3>Services</h3>
+                <a href="#">Fashion Design</a>
+                <a href="#">Custom Tailoring</a>
+                <a href="#">Alterations</a>
+                <a href="#">Personal Styling</a>
+                <a href="#">Bridal Services</a>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Ifete Awka, Anambra, Nigeria</p>
+                <p><i class="fas fa-phone"></i> +2348127639801</p>
+                <p><i class="fas fa-envelope"></i> nerdycouture44@gmail.com</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Needy Couture. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Header background on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.backgroundColor = 'rgba(44, 44, 44, 0.98)';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.2)';
+            } else {
+                header.style.backgroundColor = 'var(--dark-grey)';
+                header.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.15)';
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const target = document.querySelector(targetId);
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Central config and price synchronization: NGN is authoritative; compute USD using live exchange rate (with fallback)
+        window.appConfig = window.appConfig || { exchangeRate: 1500.00, exchangeLastUpdated: null };
+
+        window.formatUSDFromNGN = function (ngn) {
+            const rate = (window.appConfig && window.appConfig.exchangeRate) || 1500.00;
+            return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(ngn / rate);
+        };
+
+        (async function syncPrices() {
+            // Try to fetch live USD->NGN rate (we keep exchangeRate as NGN per 1 USD)
+            try {
+                const resp = await fetch('https://api.exchangerate.host/latest?base=USD&symbols=NGN');
+                if (resp.ok) {
+                    const data = await resp.json();
+                    if (data && data.rates && data.rates.NGN) {
+                        window.appConfig.exchangeRate = Number(data.rates.NGN) || window.appConfig.exchangeRate;
+                        window.appConfig.exchangeLastUpdated = data.date || new Date().toISOString();
+                    }
+                }
+            } catch (err) {
+                // network failed, keep fallback
+                console.warn('Could not fetch live exchange rate, using fallback', err);
+            }
+
+            // Update all USD displays on the page
+            document.querySelectorAll('[data-ngn]').forEach(el => {
+                const ngnStr = el.getAttribute('data-ngn');
+                const ngn = Number(ngnStr);
+                if (Number.isFinite(ngn)) {
+                    const usdSpan = el.querySelector('.usd-price');
+                    const usdText = ` (${window.formatUSDFromNGN(ngn)})`;
+                    if (usdSpan) {
+                        usdSpan.textContent = usdText;
+                    } else {
+                        el.insertAdjacentHTML('beforeend', ` <span class="usd-price">${usdText}</span>`);
+                    }
+                }
+            });
+        })();
+        
+        // Header icons behavior: open search overlay, cart drawer, account modal, cart persistence, and auth stub
+        (function headerUI() {
+            const searchBtn = document.getElementById('search-btn');
+            const cartBtn = document.getElementById('cart-btn');
+            const userBtn = document.getElementById('user-btn');
+
+            // Create overlay and drawer elements (idempotent — if present, reuse)
+            let searchOverlay = document.getElementById('search-overlay');
+            if (!searchOverlay) {
+                searchOverlay = document.createElement('div');
+                searchOverlay.className = 'overlay';
+                searchOverlay.id = 'search-overlay';
+                searchOverlay.innerHTML = `
+                    <div class="search-box" role="dialog" aria-modal="true">
+                        <input type="search" id="search-input" placeholder="Search collections, fabrics, services..." aria-label="Search" />
+                        <button id="search-close" class="fabric-button">Close</button>
+                    </div>
+                `;
+                document.body.appendChild(searchOverlay);
+            }
+
+            let cartDrawer = document.getElementById('cart-drawer');
+            if (!cartDrawer) {
+                cartDrawer = document.createElement('aside');
+                cartDrawer.className = 'drawer';
+                cartDrawer.id = 'cart-drawer';
+                cartDrawer.innerHTML = `
+                    <h3>Your Cart</h3>
+                    <div id="cart-contents"><p class="service-desc">No items yet.</p></div>
+                    <div style="margin-top:12px;display:flex;gap:8px;">
+                        <button id="checkout" class="fabric-button">Checkout</button>
+                        <button id="cart-close" class="fabric-button">Close</button>
+                    </div>
+                `;
+                document.body.appendChild(cartDrawer);
+            }
+
+            let userOverlay = document.getElementById('user-overlay');
+            if (!userOverlay) {
+                userOverlay = document.createElement('div');
+                userOverlay.className = 'overlay';
+                userOverlay.id = 'user-overlay';
+                userOverlay.innerHTML = `
+                    <div class="modal" role="dialog" aria-modal="true">
+                        <h3>Account</h3>
+                        <div id="account-forms">
+                            <form id="signin-form" style="display:block">
+                                <label>Email<br><input type="email" id="signin-email" required /></label><br>
+                                <label>Password<br><input type="password" id="signin-pass" required /></label><br>
+                                <div style="margin-top:8px;display:flex;gap:8px;">
+                                    <button type="submit" class="fabric-button">Sign in</button>
+                                    <button type="button" id="show-signup" class="fabric-button">Create account</button>
+                                    <button type="button" id="user-close" class="fabric-button">Close</button>
+                                </div>
+                            </form>
+                            <form id="signup-form" style="display:none">
+                                <label>Name<br><input type="text" id="signup-name" required /></label><br>
+                                <label>Email<br><input type="email" id="signup-email" required /></label><br>
+                                <label>Password<br><input type="password" id="signup-pass" required /></label><br>
+                                <div style="margin-top:8px;display:flex;gap:8px;">
+                                    <button type="submit" class="fabric-button">Create</button>
+                                    <button type="button" id="show-signin" class="fabric-button">Back</button>
+                                    <button type="button" id="user-close-2" class="fabric-button">Close</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                `;
+                document.body.appendChild(userOverlay);
+            }
+
+            // Cart state with persistence
+            let cart = [];
+
+            function loadCart() {
+                try {
+                    const raw = localStorage.getItem('nc_cart');
+                    cart = raw ? JSON.parse(raw) : [];
+                } catch (err) { cart = []; }
+            }
+            function saveCart() {
+                try { localStorage.setItem('nc_cart', JSON.stringify(cart)); } catch (err) { console.warn('Could not save cart', err); }
+            }
+
+            function formatNGN(n) {
+                return '₦' + n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            }
+
+            function renderCart() {
+                const container = document.getElementById('cart-contents');
+                if (!container) return;
+                if (cart.length === 0) {
+                    container.innerHTML = '<p class="service-desc">No items yet.</p>';
+                    return;
+                }
+                const lines = cart.map((item, idx) => {
+                    return `
+                        <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #eee;">
+                            <div>
+                                <div style="font-weight:600">${item.title}</div>
+                                <div style="font-size:0.95rem;color:#666">${formatNGN(item.ngn)} · ${window.formatUSDFromNGN(item.ngn)}</div>
+                            </div>
+                            <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end;">
+                                <button data-remove="${idx}" class="fabric-button">Remove</button>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+                container.innerHTML = lines + `<div style="margin-top:12px;font-weight:600;">Total: ${formatNGN(cart.reduce((s,i)=>s+i.ngn,0))} · ${window.formatUSDFromNGN(cart.reduce((s,i)=>s+i.ngn,0))}</div>`;
+            }
+
+            // Wire add-to-cart buttons
+            function handleAddToCartClick(e) {
+                const btn = e.target.closest('.add-to-cart');
+                if (!btn) return;
+                const title = btn.getAttribute('data-title') || btn.textContent.trim();
+                const ngn = Number(btn.getAttribute('data-ngn')) || 0;
+                cart.push({ title, ngn });
+                saveCart();
+                renderCart();
+                openDrawer(cartDrawer);
+            }
+
+            document.addEventListener('click', function (e) {
+                // remove from cart
+                const rem = e.target.closest('[data-remove]');
+                if (rem) {
+                    const idx = Number(rem.getAttribute('data-remove'));
+                    if (!Number.isNaN(idx) && cart[idx]) {
+                        cart.splice(idx, 1);
+                        saveCart();
+                        renderCart();
+                    }
+                }
+                // add to cart
+                if (e.target.closest('.add-to-cart')) {
+                    handleAddToCartClick(e);
+                }
+            });
+
+            // Wire header buttons
+            function openOverlay(el) { el.classList.add('active'); }
+            function closeOverlay(el) { el.classList.remove('active'); }
+            function openDrawer(d) { d.classList.add('open'); }
+            function closeDrawer(d) { d.classList.remove('open'); }
+
+            searchBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                openOverlay(searchOverlay);
+                setTimeout(() => document.getElementById('search-input').focus(), 50);
+            });
+
+            cartBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                loadCart();
+                renderCart();
+                openDrawer(cartDrawer);
+            });
+
+            userBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                openOverlay(userOverlay);
+            });
+
+            // ARIA live region for announcements
+            let ariaLive = document.getElementById('aria-live');
+            if (!ariaLive) {
+                ariaLive = document.createElement('div');
+                ariaLive.id = 'aria-live';
+                ariaLive.setAttribute('aria-live', 'polite');
+                document.body.appendChild(ariaLive);
+            }
+
+            function announce(msg) {
+                if (!ariaLive) return;
+                ariaLive.textContent = '';
+                setTimeout(() => { ariaLive.textContent = msg; }, 50);
+            }
+
+            // Update announcements when cart changes
+            const originalRenderCart = renderCart;
+            renderCart = function () {
+                originalRenderCart();
+                announce(`Cart updated, ${cart.length} item${cart.length !== 1 ? 's' : ''}.`);
+            };
+
+            // Focus-trap utility for overlays/drawers
+            function trapFocus(container) {
+                const focusable = 'a[href], button, textarea, input, select, [tabindex]:not([tabindex="-1"])';
+                const elements = Array.from(container.querySelectorAll(focusable)).filter(el => !el.hasAttribute('disabled'));
+                if (elements.length === 0) return;
+                const first = elements[0];
+                const last = elements[elements.length -1];
+                function handle(e) {
+                    if (e.key !== 'Tab') return;
+                    if (e.shiftKey) {
+                        if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+                    } else {
+                        if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+                    }
+                }
+                container.addEventListener('keydown', handle);
+                return function untrap() { container.removeEventListener('keydown', handle); };
+            }
+
+            // Image Manager: create overlay UI and logic
+            let imageManagerOverlay = document.getElementById('image-manager-overlay');
+            if (!imageManagerOverlay) {
+                imageManagerOverlay = document.createElement('div');
+                imageManagerOverlay.className = 'overlay';
+                imageManagerOverlay.id = 'image-manager-overlay';
+                imageManagerOverlay.innerHTML = `
+                    <div class="image-manager modal" role="dialog" aria-modal="true">
+                        <h3>Image Manager</h3>
+                        <div id="image-manager-list"></div>
+                        <div style="margin-top:12px;display:flex;gap:8px;">
+                            <button id="image-manager-save" class="fabric-button">Save changes</button>
+                            <button id="image-manager-close" class="fabric-button">Close</button>
+                        </div>
+                    </div>
+                `;
+                document.body.appendChild(imageManagerOverlay);
+            }
+
+            // Load persisted overrides from localStorage
+            function loadImageOverrides() {
+                try {
+                    return JSON.parse(localStorage.getItem('nc_image_overrides') || '{}');
+                } catch (err) { return {}; }
+            }
+            function saveImageOverrides(obj) {
+                try { localStorage.setItem('nc_image_overrides', JSON.stringify(obj)); } catch (err) { console.warn('Could not save image overrides', err); }
+            }
+
+            function applyImageOverrides() {
+                const overrides = loadImageOverrides();
+                Object.keys(overrides).forEach(key => {
+                    const img = document.querySelector(`[data-img-key="${key}"]`);
+                    if (img && overrides[key]) img.src = overrides[key];
+                });
+            }
+
+            function buildImageManagerList() {
+                const list = document.getElementById('image-manager-list');
+                list.innerHTML = '';
+                const overrides = loadImageOverrides();
+                // Collect image elements in collections and fabrics
+                const images = Array.from(document.querySelectorAll('.collection-img, .fabric-img'));
+                images.forEach((img, idx) => {
+                    const key = img.getAttribute('data-img-key') || (`img-${idx}`);
+                    const row = document.createElement('div'); row.className = 'image-row';
+                    row.innerHTML = `
+                        <div style="display:flex;gap:12px;align-items:center;">
+                            <img src="${img.src}" alt="preview" />
+                            <div style="min-width:220px;">
+                                <div style="font-weight:600">${img.alt || 'Image ' + (idx+1)}</div>
+                                <div style="font-size:0.9rem;color:#666">Key: <code style="font-size:0.85rem">${key}</code></div>
+                            </div>
+                        </div>
+                        <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end;">
+                            <input type="text" class="image-url-input" value="${overrides[key] || img.src}" />
+                            <button data-apply-key="${key}" class="fabric-button">Apply</button>
+                        </div>
+                    `;
+                    list.appendChild(row);
+                });
+            }
+
+            // Helper to produce a simple unique selector (id if present, else path)
+            function getUniqueSelector(el) {
+                if (el.id) return `#${el.id}`;
+                // build a simple selector using classes and index
+                const classes = el.className ? '.' + el.className.trim().split(/\s+/).join('.') : el.tagName.toLowerCase();
+                const parent = el.parentElement;
+                if (!parent) return `${el.tagName.toLowerCase()}${classes}`;
+                const index = Array.from(parent.querySelectorAll(el.tagName)).indexOf(el) + 1;
+                return `${parent.tagName.toLowerCase()} > ${el.tagName.toLowerCase()}:nth-of-type(${index})${classes}`;
+            }
+
+            // Wire manage images button
+            const manageBtn = document.getElementById('manage-images-btn');
+            let activeTrap = null;
+            manageBtn?.addEventListener('click', function (e) {
+                e.preventDefault();
+                buildImageManagerList();
+                openOverlay(imageManagerOverlay);
+                // trap focus inside
+                activeTrap = trapFocus(imageManagerOverlay);
+            });
+
+            // Handle apply and save actions inside image manager
+            document.addEventListener('click', function (e) {
+                const apply = e.target.closest('[data-apply]');
+                if (apply) {
+                    const key = apply.getAttribute('data-apply-key');
+                        const row = apply.closest('.image-row');
+                        const input = row.querySelector('.image-url-input');
+                        const url = input.value.trim();
+                        if (url) {
+                            try {
+                                const img = document.querySelector(`[data-img-key="${key}"]`);
+                                if (img) img.src = url;
+                                const overrides = loadImageOverrides();
+                                overrides[key] = url;
+                                saveImageOverrides(overrides);
+                                announce('Image updated');
+                            } catch (err) { console.warn('Could not apply image', err); }
+                        }
+                }
+                if (e.target && e.target.id === 'image-manager-save') {
+                    announce('Image changes saved');
+                }
+                if (e.target && e.target.id === 'image-manager-close') {
+                    closeOverlay(imageManagerOverlay);
+                    if (activeTrap) { activeTrap(); activeTrap = null; }
+                }
+            });
+
+            // Apply overrides on load and whenever the sync runs
+            applyImageOverrides();
+
+
+            // Close buttons
+            document.addEventListener('click', function (e) {
+                if (e.target && e.target.id === 'search-close') closeOverlay(searchOverlay);
+                if (e.target && e.target.id === 'cart-close') closeDrawer(cartDrawer);
+                if (e.target && (e.target.id === 'user-close' || e.target.id === 'user-close-2')) closeOverlay(userOverlay);
+                if (e.target && e.target.id === 'checkout') {
+                    if (cart.length === 0) { alert('Your cart is empty.'); }
+                    else {
+                        // open checkout modal
+                        let checkoutOverlay = document.getElementById('checkout-overlay');
+                        if (!checkoutOverlay) {
+                            checkoutOverlay = document.createElement('div');
+                            checkoutOverlay.className = 'overlay';
+                            checkoutOverlay.id = 'checkout-overlay';
+                            checkoutOverlay.innerHTML = `
+                                <div class="modal" role="dialog" aria-modal="true">
+                                    <h3>Checkout</h3>
+                                    <form id="checkout-form">
+                                        <label>Name<br><input type="text" id="checkout-name" required /></label><br>
+                                        <label>Email<br><input type="email" id="checkout-email" required /></label><br>
+                                        <div style="margin-top:8px;display:flex;gap:8px;">
+                                            <button type="submit" class="fabric-button">Confirm</button>
+                                            <button type="button" id="checkout-cancel" class="fabric-button">Cancel</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            `;
+                            document.body.appendChild(checkoutOverlay);
+                        }
+                        openOverlay(checkoutOverlay);
+                        // trap focus
+                        const untrap = trapFocus(checkoutOverlay);
+                        // handle cancel
+                        document.getElementById('checkout-cancel')?.addEventListener('click', function () { closeOverlay(checkoutOverlay); if (untrap) untrap(); });
+                        document.getElementById('checkout-form')?.addEventListener('submit', function (ev) {
+                            ev.preventDefault();
+                            // demo processing
+                            alert('Demo checkout complete — cart will be cleared.');
+                            cart.length = 0; saveCart(); renderCart(); closeOverlay(checkoutOverlay); if (untrap) untrap(); closeDrawer(cartDrawer);
+                        });
+                    }
+                }
+            });
+
+            // search live-filter: hide collection and fabric items that don't match
+            const searchInput = document.getElementById('search-input');
+            if (searchInput) {
+                searchInput.addEventListener('input', function (ev) {
+                    const q = (ev.target.value || '').trim().toLowerCase();
+                    const collectionItems = document.querySelectorAll('.collection-item');
+                    const fabricItems = document.querySelectorAll('.fabric-item');
+
+                    function matches(el) {
+                        const text = (el.textContent || '').toLowerCase();
+                        return text.indexOf(q) !== -1;
+                    }
+
+                    if (q === '') {
+                        collectionItems.forEach(i => i.style.display = '');
+                        fabricItems.forEach(i => i.style.display = '');
+                    } else {
+                        collectionItems.forEach(i => i.style.display = matches(i) ? '' : 'none');
+                        fabricItems.forEach(i => i.style.display = matches(i) ? '' : 'none');
+                    }
+                });
+            }
+
+            // Account forms (client-only stubs)
+            document.getElementById('show-signup')?.addEventListener('click', function () {
+                document.getElementById('signin-form').style.display = 'none';
+                document.getElementById('signup-form').style.display = 'block';
+            });
+            document.getElementById('show-signin')?.addEventListener('click', function () {
+                document.getElementById('signup-form').style.display = 'none';
+                document.getElementById('signin-form').style.display = 'block';
+            });
+
+            document.getElementById('signin-form')?.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const email = document.getElementById('signin-email').value;
+                // Store minimal user info locally (demo only)
+                localStorage.setItem('nc_user', JSON.stringify({ email }));
+                alert('Signed in (demo).');
+                closeOverlay(userOverlay);
+            });
+            document.getElementById('signup-form')?.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const email = document.getElementById('signup-email').value;
+                const name = document.getElementById('signup-name').value;
+                localStorage.setItem('nc_user', JSON.stringify({ email, name }));
+                alert('Account created (demo).');
+                closeOverlay(userOverlay);
+            });
+
+            // Close overlay when clicking outside modal content
+            [searchOverlay, userOverlay].forEach(ov => {
+                ov.addEventListener('click', function (e) { if (e.target === ov) closeOverlay(ov); });
+            });
+
+            // Close drawer/overlays on Escape
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') {
+                    closeOverlay(searchOverlay);
+                    closeOverlay(userOverlay);
+                    closeDrawer(cartDrawer);
+                }
+            });
+
+        })();
+    </script>
+</body>
+</html>
